@@ -1,0 +1,99 @@
+site_name: Mach
+site_url: https://docs.mach.exchange/
+repo_name: tristeroresearch/docs
+repo_url: https://github.com/tristeroresearch/docs
+
+extra:
+  version:
+    provider: mike
+
+theme:
+  name: material
+  custom_dir: docs/assets/overrides
+  logo: assets/logo
+  favicon: assets/logo-dark.svg
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: fusiondoc-dark
+      toggle:
+        icon: octicons/sun-24
+        title: Switch to light theme
+    - media: "(prefers-color-scheme: light)"
+      scheme: fusiondoc-light
+      toggle:
+        icon: octicons/moon-24
+        title: Switch to dark theme
+  font:
+    text: Plus Jakarta Sans
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - navigation.instant
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+  icon:
+    repo: octicons/mark-github-16
+
+extra_css:
+  - assets/theme/fusiondoc.css
+  - assets/theme/colours.css
+  - assets/theme/code.css
+  - assets/theme/paragraph.css
+  - assets/theme/page.css
+  - assets/theme/admonition.css
+  - assets/theme/404.css
+  - assets/theme/api-reference.css
+  - assets/theme/dev-tools.css
+
+extra_javascript:
+  - assets/scripts/smooth-scroll.js
+
+nav:
+  - Home: index.md
+  - Tutorials:
+    - Tutorials: tutorials/index.md
+    - Getting Started: tutorials/full-integration/getting-started.md
+  - API Reference:
+    - API Reference: api-reference/index.md
+    - Overview:
+      - Errors: api-reference/overview/errors.md
+      - Swaps: api-reference/overview/swaps.md
+    - Protocol:
+      - Optimistic Orders: api-reference/protocol/optimistic-orders.md
+      - Order Books: api-reference/protocol/order-books.md
+      - Intents: api-reference/protocol/intents.md
+      - Challenges: api-reference/protocol/challenges.md
+    - Smart Contracts:
+      - Deployments:
+        - Overview: api-reference/contracts/deployments/overview.md
+        - Order Book: api-reference/contracts/deployments/order-book.md
+      - Source Code: api-reference/contracts/source-code.md
+      - Audits: api-reference/contracts/audits.md
+    - Endpoints:
+      - Supported Assets: api-reference/endpoints/supported-assets.md
+      - Supported Chains: api-reference/endpoints/supported-chains.md
+      - Quotes: api-reference/endpoints/quotes.md
+      - Orders: api-reference/endpoints/orders.md
+      - Swagger API Docs: https://cache-half-full-production.fly.dev/docs
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - meta
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      guess_lang: false
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
